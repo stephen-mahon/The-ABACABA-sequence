@@ -1,10 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-	alpha := []byte{97}
-	beta := string(alpha[0] + 1)
-	fmt.Println(alpha)
-	fmt.Println(beta)
+	fmt.Println(abacaba(5))
+}
+
+func abacaba(num int) string {
+
+	alpha := strings.Split("abcdefghijklmnopqrstuvqxyx", "")
+
+	output := ""
+
+	for i := 0; i < num; i++ {
+		output = output + alpha[i] + output
+	}
+
+	return output
 }
